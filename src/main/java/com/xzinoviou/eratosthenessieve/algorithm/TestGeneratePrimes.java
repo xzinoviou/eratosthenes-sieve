@@ -1,7 +1,6 @@
 package com.xzinoviou.eratosthenessieve.algorithm;
 
 import com.xzinoviou.eratosthenessieve.algorithm.draft.initial.GeneratePrimes;
-import com.xzinoviou.eratosthenessieve.algorithm.draft.refactor.version4.PrimeGenerator;
 import java.util.Arrays;
 
 public class TestGeneratePrimes {
@@ -10,10 +9,11 @@ public class TestGeneratePrimes {
   private static int[] result = null;
 
   public static void main(String[] args) {
-    initialDraft();
-    refactor1();
-    refactor2();
-    refactor3();
+    initialDraftVersion1();
+    refactorVersion2();
+    refactorVersion3();
+    refactorVersion4();
+    refactorVersion5();
 
   }
 
@@ -23,7 +23,7 @@ public class TestGeneratePrimes {
 
   }
 
-  public static void initialDraft() {
+  public static void initialDraftVersion1() {
     System.out.println("Initial Draft");
     for (int i : testNumbers) {
       result = GeneratePrimes.generatePrimes(i);
@@ -32,8 +32,8 @@ public class TestGeneratePrimes {
     System.out.println();
   }
 
-  public static void refactor1() {
-    System.out.println("Refactor 1");
+  public static void refactorVersion2() {
+    System.out.println("Refactor Version 2");
     for (int i : testNumbers) {
       result = com.xzinoviou.eratosthenessieve.algorithm.draft.refactor.version2.PrimeGenerator
           .generatePrimes(i);
@@ -43,8 +43,8 @@ public class TestGeneratePrimes {
     System.out.println();
   }
 
-  public static void refactor2() {
-    System.out.println("Refactor 2");
+  public static void refactorVersion3() {
+    System.out.println("Refactor Version3 2");
     for (int i : testNumbers) {
       result = com.xzinoviou.eratosthenessieve.algorithm.draft.refactor.version3.PrimeGenerator
           .generatePrimes(i);
@@ -53,10 +53,21 @@ public class TestGeneratePrimes {
     System.out.println();
   }
 
-  public static void refactor3() {
-    System.out.println("Refactor 3");
+  public static void refactorVersion4() {
+    System.out.println("Refactor Version 4");
     for (int i : testNumbers) {
-      result = PrimeGenerator.generatePrimes(i);
+      result = com.xzinoviou.eratosthenessieve.algorithm.draft.refactor.version4.PrimeGenerator
+          .generatePrimes(i);
+      print(result);
+    }
+    System.out.println();
+  }
+
+  public static void refactorVersion5() {
+    System.out.println("Refactor Version 5");
+    for (int i : testNumbers) {
+      result = com.xzinoviou.eratosthenessieve.algorithm.draft.refactor.version5.PrimeGenerator
+          .generatePrimes(i);
       print(result);
     }
     System.out.println();
